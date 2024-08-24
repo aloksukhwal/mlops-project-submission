@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - Self-Hosted try
+name: CI/CD Pipeline - Self-Hosted try1
 
 on:
   push:
