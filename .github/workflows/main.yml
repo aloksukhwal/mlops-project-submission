@@ -3,4 +3,12 @@ name: CI/CD Pipeline - Self-Hosted try
 on:
   push:
     branches:
-      - master
+     - master
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout Repository Code
+      uses: actions/checkout@v2
