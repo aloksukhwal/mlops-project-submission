@@ -1,1 +1,6 @@
+name: CI/CD Pipeline - Self-Hosted try
 
+on:
+  push:
+    branches:
+      - master
