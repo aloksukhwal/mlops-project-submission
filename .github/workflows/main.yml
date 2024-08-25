@@ -16,3 +16,20 @@ jobs:
     - name: Verify Python 3.8 Installation
       run: |
         python3 --version || (echo "Python3 is not installed" && exit 1)
+
+    - name: Install Docker If Needed
+      id: docker-install
+      run: |
+        if ! command -v docker &> /dev/null; then
+          echo "Docker not found. Installing..."
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+          sudo apt-get update
+          sudo apt-get install -y docker-ce
+          sudo systemctl start docker
+          sudo systemctl enable docker
+        else
+          echo "Docker is already installed"
+        fi
