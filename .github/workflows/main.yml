@@ -12,3 +12,7 @@ jobs:
     steps:
     - name: Checkout Repository Code
       uses: actions/checkout@v2
+
+    - name: Verify Python 3.8 Installation
+      run: |
+        python3 --version || (echo "Python3 is not installed" && exit 1)
