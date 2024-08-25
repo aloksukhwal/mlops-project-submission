@@ -1,3 +1,3 @@
-AIMOPS Porject for submission of PART B
+AIMOPS Project for submission of PART B
 
 
